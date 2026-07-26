@@ -4,7 +4,7 @@ import { PokemonResponseDto } from '../dtos/PokemonResponseDto';
 export class PokemonMapper {
   static toDomain(pokemonDto: PokemonResponseDto): Pokemon {
     return {
-      pokemonId: pokemonDto.id,
+      id: pokemonDto.id,
       name: pokemonDto.name,
       imageUrl: pokemonDto.sprites.other['official-artwork'].front_default,
       heightInMeters: pokemonDto.height / 10,
