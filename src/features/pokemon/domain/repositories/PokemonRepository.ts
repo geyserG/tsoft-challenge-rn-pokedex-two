@@ -1,4 +1,4 @@
-import { Pokemon } from '../entities/Pokemon';
+import { Pokemon } from '../entities/PokemonDetails';
 import { PokemonList } from '../entities/PokemonList';
 
 export interface PokemonRepository {
