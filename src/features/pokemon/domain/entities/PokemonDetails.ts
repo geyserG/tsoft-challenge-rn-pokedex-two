@@ -3,6 +3,6 @@ export interface Pokemon {
   name: string;
   imageUrl: string;
   heightInMeters: number;
-  weigthInKilograms: number;
+  weightInKilograms: number;
   description: string;
 }
