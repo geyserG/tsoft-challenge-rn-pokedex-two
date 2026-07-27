@@ -8,12 +8,15 @@
 import { PokemonDependencyProvider } from './src/features/pokemon/presentation/context/PokemonDependencyProvider';
 import { dependencies } from './src/features/pokemon/di/pokemonContainer';
 import PokemonListScreen from './src/features/pokemon/presentation/screens/PokemonListScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 function App() {
   return (
-    <PokemonDependencyProvider dependencies={dependencies}>
-      <AppContent />
-    </PokemonDependencyProvider>
+    <SafeAreaProvider>
+      <PokemonDependencyProvider dependencies={dependencies}>
+        <AppContent />
+      </PokemonDependencyProvider>
+    </SafeAreaProvider>
   );
 }
 
