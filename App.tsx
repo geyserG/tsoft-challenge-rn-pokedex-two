@@ -6,7 +6,7 @@
  */
 
 import { StyleSheet, Text, View } from 'react-native';
-import PokemonDependencyProvider from './src/features/pokemon/presentation/context/PokemonDependencyContext';
+import PokemonDependencyProvider from './src/features/pokemon/presentation/providers/PokemonDependencyProvider';
 import { dependencies } from './src/features/pokemon/di/pokemonContainer';
 
 function App() {
