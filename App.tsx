@@ -5,9 +5,9 @@
  * @format
  */
 
-import { StyleSheet, Text, View } from 'react-native';
-import PokemonDependencyProvider from './src/features/pokemon/presentation/providers/PokemonDependencyProvider';
+import { PokemonDependencyProvider } from './src/features/pokemon/presentation/context/PokemonDependencyProvider';
 import { dependencies } from './src/features/pokemon/di/pokemonContainer';
+import PokemonListScreen from './src/features/pokemon/presentation/screens/PokemonListScreen';
 
 function App() {
   return (
@@ -19,16 +19,10 @@ function App() {
 
 function AppContent() {
   return (
-    <View style={styles.container}>
-      <Text>Pokedex</Text>
-    </View>
+    <>
+      <PokemonListScreen />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;

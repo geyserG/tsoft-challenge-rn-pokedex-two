@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren } from 'react';
+import { createContext, PropsWithChildren, useContext } from 'react';
 import { GetPokemonDetails } from '../../domain/usecases/GetPokemonDetails';
 import { GetPokemonList } from '../../domain/usecases/GetPokemonList';
 
@@ -15,7 +15,7 @@ interface PokemonDependencyProviderProps extends PropsWithChildren {
   dependencies: PokemonDependencies;
 }
 
-const PokemonDependencyProvider = ({
+export const PokemonDependencyProvider = ({
   children,
   dependencies,
 }: PokemonDependencyProviderProps) => {
@@ -26,4 +26,13 @@ const PokemonDependencyProvider = ({
   );
 };
 
-export default PokemonDependencyProvider;
+export const usePokemonDependencies = (): PokemonDependencies => {
+  const value = useContext(PokemonDependencyContext);
+
+  if (!value)
+    throw new Error(
+      'usePokemonDependencies solo debe usarse dentro PokemonDependencyProvider',
+    );
+
+  return value;
+};
