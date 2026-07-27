@@ -5,23 +5,15 @@
  * @format
  */
 
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View } from 'react-native';
+import PokemonDependencyProvider from './src/features/pokemon/presentation/context/PokemonDependencyContext';
+import { dependencies } from './src/features/pokemon/di/pokemonContainer';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <PokemonDependencyProvider dependencies={dependencies}>
       <AppContent />
-    </SafeAreaProvider>
+    </PokemonDependencyProvider>
   );
 }
 
